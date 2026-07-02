@@ -1,0 +1,7 @@
+gymnasium
+panda-gym
+stable-baselines3
+sb3-contrib
+tensorboard
+torch
+opencv-python
