@@ -32,4 +32,13 @@ You can type commands into the terminal while it runs (like "clean the kitchen" 
 
 ## Implimentation
 
+Env
+<img width="1462" height="1076" alt="neurogenesis_image" src="https://github.com/user-attachments/assets/d8ad933f-e96f-4f49-868a-9e8afcad42c2" />
+
+Tasks->
+
+# dirt cleaning
+
+
+https://github.com/user-attachments/assets/db13d28b-ca78-4f03-860c-f0f07543fe0f
 
