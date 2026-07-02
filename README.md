@@ -8,11 +8,13 @@ We trained a PyBullet Panda robot using Proximal Policy Optimization (PPO) for t
 
 It's recommended to use a virtual environment:
 ```bash
-python -m venv venv
-# Windows
-venv\Scripts\activate
+python -m venv .venv
+# Windows (PowerShell)
+.\.venv\Scripts\Activate.ps1
+# Windows (Command Prompt)
+.venv\Scripts\activate.bat
 # Linux/Mac
-source venv/bin/activate
+source .venv/bin/activate
 ```
 
 Install requirements:
@@ -28,10 +30,4 @@ python neurogenesis_smart_robot.py
 ```
 You can type commands into the terminal while it runs (like "clean the kitchen" or "put the cereal box on the table").
 
-## Training
 
-If you want to train the RL policies yourself (using stable-baselines3):
-```bash
-# Train pick and place
-python training/train_ppo_pickplace.py
-```
