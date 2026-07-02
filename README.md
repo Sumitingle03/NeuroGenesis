@@ -1,52 +1,37 @@
-# NeuroGenesis — Autonomous Smart Robot Agent
+# NeuroGenesis
 
-NeuroGenesis is an autonomous smart robot agent that operates in a physics-simulated environment (PyBullet). The robot is capable of performing household chores such as cleaning dirt, disposing of trash, and continuously monitoring the environment for displaced objects (e.g., picking up items from the floor). The project integrates Large Language Model (LLM) reasoning for processing NLP commands with Reinforcement Learning (PPO) for low-level robotic skills like pick-and-place.
+NeuroGenesis is a simulated robotic agent that uses LLMs and reinforcement learning to autonomously perform household tasks in PyBullet. It can pick up misplaced objects, clean up spills, and follow natural language commands.
 
-## Features
-- **Autonomous Mode:** On startup, the robot performs housekeeping chores and continuously monitors the environment for tasks.
-- **Natural Language Commands:** Users can type commands in the terminal (via background threads) for the robot to execute asynchronously.
-- **Reinforcement Learning:** Includes scripts to train customized pick-and-place policies using Proximal Policy Optimization (PPO) and PyBullet.
-- **Robust NLP Matching:** Synonyms and fuzzy-matching logic to map natural language targets to simulated environment objects.
+We trained a PyBullet Panda robot using Proximal Policy Optimization (PPO) for the low-level pick-and-place skills, and we use an LLM for the high-level reasoning and command parsing.
 
-## Installation
+## Setup
 
-1. Clone the repository:
-   ```bash
-   git clone <your-repository-url>
-   cd NeuroGenesis
-   ```
+It's recommended to use a virtual environment:
+```bash
+python -m venv venv
+# Windows
+venv\Scripts\activate
+# Linux/Mac
+source venv/bin/activate
+```
 
-2. Create and activate a virtual environment (optional but recommended):
-   ```bash
-   python -m venv .venv
-   # On Windows:
-   .venv\Scripts\activate
-   # On Linux/macOS:
-   source .venv/bin/activate
-   ```
+Install requirements:
+```bash
+pip install -r requirements.txt
+```
 
-3. Install the dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+## Running the Agent
 
-## Usage
-
-To start the autonomous robot agent:
+To start the main autonomous robot:
 ```bash
 python neurogenesis_smart_robot.py
 ```
-While running, you can type commands in the terminal to instruct the robot directly.
+You can type commands into the terminal while it runs (like "clean the kitchen" or "put the cereal box on the table").
 
-To train the pick-and-place reinforcement learning policy:
+## Training
+
+If you want to train the RL policies yourself (using stable-baselines3):
 ```bash
+# Train pick and place
 python training/train_ppo_pickplace.py
 ```
-
-## Repository Structure
-- `neurogenesis_smart_robot.py`: Main entry point for the smart robot agent.
-- `env/`: Custom PyBullet environment configurations.
-- `llm_agent/`: Logic for the LLM reasoning (brain), robotic skills mapping, and camera system.
-- `training/`: Training scripts using stable-baselines3.
-- `requirements.txt`: Python package dependencies.
-- `logs/` & `checkpoints/`: (Generated) TensorBoard logs and model checkpoints from RL training.
