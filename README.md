@@ -30,4 +30,6 @@ python neurogenesis_smart_robot.py
 ```
 You can type commands into the terminal while it runs (like "clean the kitchen" or "put the cereal box on the table").
 
+##Implimentation
+
 
